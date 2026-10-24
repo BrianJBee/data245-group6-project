@@ -1,0 +1,10 @@
+name: data245-group6-project-env
+channels:
+  - defaults
+dependencies:
+  - pandas
+  - pyyaml
+  - ipykernel
+  - matplotlib
+  - seaborn
+  - scikit-learn
