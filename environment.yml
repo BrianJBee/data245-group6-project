@@ -2,9 +2,11 @@ name: data245-group6-project-env
 channels:
   - defaults
 dependencies:
-  - pandas
   - pyyaml
   - ipykernel
+  - scikit-learn
+  - pandas
   - matplotlib
   - seaborn
-  - scikit-learn
+  - ucimlrepo
+  - nbstripout
