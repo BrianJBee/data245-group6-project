@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import pandas as pd
 from pathlib import Path
 from ucimlrepo import fetch_ucirepo
 
@@ -16,7 +17,10 @@ def ingest():
         META_PATH.exists()
     ]):
         print('Data found in local directory. Ingestion skipped.')
-        return
+        df = pd.read_csv(DATA_PATH)
+        adult_dict = pd.read_csv(DICT_PATH)
+        adult_metadata = pd.read_json(META_PATH, typ='series')
+        return (df, adult_dict, adult_metadata)
 
     print('Data not found in local directory. Fetching data...')
 
@@ -36,8 +40,13 @@ def ingest():
     adult.variables.to_csv(DICT_PATH, index=False)
     with open(META_PATH, 'w') as metadata_file:
         json.dump(adult.metadata, metadata_file, indent=4)
-
     print(f"Data saved to {RAW_DIR}")
+
+    # Re-import for return consistency
+    df = pd.read_csv(DATA_PATH)
+    adult_dict = pd.read_csv(DICT_PATH)
+    adult_metadata = pd.read_json(META_PATH, typ='series')
+    return (df, adult_dict, adult_metadata)
 
 
 
