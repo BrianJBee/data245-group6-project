@@ -363,15 +363,20 @@ conda env create -f environment.yml
 # Activate the environment
 conda activate data245-group6-project-env
 
-# Launch Jupyter
+# Launch Jupyter (if applicable)
 jupyter lab
 ```
 
- Once the environment is activated, the project's Python files and Jupyter notebooks should use the dependencies specified in `environment.yml`.
+Once the environment is activated, the project's Python files and Jupyter notebooks should use the dependencies specified in `environment.yml`.
 
- ## Notes
+## Notes
 
- - Always activate the project's Conda environment before running project code.
+- Always activate the project's Conda environment before running project code.
+- For consistent results, run every project notebook once in numerical order after restarting the kernel and clearing outputs.
+- If a notebook cannot import modules in `src/`, run the following from the project root directory:
+```bash
+python3 -m src.ingest
+```
 - Run commands from the project's root directory when possible.
 - Use the Jupyter kernel associated with the project environment when running notebooks.
 - Do not manually install additional packages unless necessary. If a dependency is required by the project, consider adding it to `environment.yml` so that other users can reproduce the same environment.
