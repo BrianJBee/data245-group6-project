@@ -9,4 +9,10 @@ dependencies:
   - matplotlib
   - seaborn
   - nbstripout
-  - folktables
+  - scipy
+  - jinja2
+  - pip
+  - pip:
+    - folktables
+    - ucimlrepo
+    - papermill
