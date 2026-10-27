@@ -1,0 +1,12 @@
+Names:
+  AGEP: 'Age'
+  COW: 'Class'
+  SCHL: 'Education'
+  MAR: 'Marital Status'
+  OCCP: 'Occupation'
+  POBP: 'Birthplace'
+  RELP: 'Relationship Status'
+  WKHP: 'Weekly Work Hours'
+  SEX: 'Sex'
+  RAC1P: 'Race'
+  PINCP: 'Income'
